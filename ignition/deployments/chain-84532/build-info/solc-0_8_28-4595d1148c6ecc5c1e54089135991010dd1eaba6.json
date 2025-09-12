@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-4595d1148c6ecc5c1e54089135991010dd1eaba6",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/ArraysExercise.sol": "project/contracts/ArraysExercise.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/ArraysExercise.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.17;\n\ncontract ArraysExercise {\n    uint[] numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n    uint[] timestamps;\n    address[] senders;\n\n    uint256 constant Y2K = 946702800;\n\n    function getNumbers() external view returns (uint[] memory) {\n        uint[] memory results = new uint[](numbers.length);\n        for (uint i = 0; i < numbers.length; i++) {\n            results[i] = numbers[i];\n        }\n        return results;\n    }\n\n    function resetNumbers() public {\n        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n    }\n\n    function appendToNumbers(uint[] calldata _toAppend) public {\n        for (uint i = 0; i < _toAppend.length; i++) {\n            numbers.push(_toAppend[i]);\n        }\n    }\n\n    function saveTimestamp(uint _unixTimestamp) public {\n        timestamps.push(_unixTimestamp);\n        senders.push(msg.sender);\n    }\n\n    function afterY2K() public view returns (uint256[] memory, address[] memory) {\n        uint256 counter = 0;\n        for (uint i = 0; i < timestamps.length; i++) {\n            if (timestamps[i] > Y2K) {\n                counter++;\n            }\n        }\n        uint256[] memory timestampsAfterY2K = new uint256[](counter);\n        address[] memory sendersAfterY2K = new address[](counter);\n        uint256 index = 0;\n        for (uint i = 0; i < timestamps.length; i++) {\n            if (timestamps[i] > Y2K) {\n                timestampsAfterY2K[index] = timestamps[i];\n                sendersAfterY2K[index] = senders[i];\n                index++;\n            }\n        }\n        return (timestampsAfterY2K, sendersAfterY2K);\n    }\n\n    function resetSenders() public {\n        delete senders;\n    }\n\n    function resetTimestamps() public {\n        delete timestamps;\n    }\n}\n\n\n"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-5d656499d0154807e310c956b8c1f013c1faf0e0",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/GarageManager.sol": "project/contracts/GarageManager.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/GarageManager.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract GarageManager {\n    struct Car {\n        string make;\n        string model;\n        string color;\n        uint256 numberOfDoors;\n    }\n\n    mapping(address => Car[]) private garages;\n\n    error BadCarIndex(uint256 index);\n\n    function addCar(string memory _make, string memory _model, string memory _color, uint256 _numberOfDoors) external {\n        garages[msg.sender].push(Car(_make, _model, _color, _numberOfDoors));\n    }\n\n    function getMyCars() external view returns (Car[] memory) {\n        return garages[msg.sender];\n    }\n\n    function getUserCars(address _user) external view returns (Car[] memory) {\n        return garages[_user];\n    }\n\n    function updateCar(uint256 _index, string memory _make, string memory _model, string memory _color, uint256 _numberOfDoors) external {\n        if (_index >= garages[msg.sender].length) {\n            revert BadCarIndex({ index: _index });\n        }\n        garages[msg.sender][_index] = Car(_make, _model, _color, _numberOfDoors);\n    }\n\n    function resetMyGarage() external {\n        delete garages[msg.sender];\n    }\n}\n\n\n"
+      }
+    }
+  }
+}

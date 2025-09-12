@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-84ad9e563d46d5fb2f572078cef225e3fb252686",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/BasicMath.sol": "project/contracts/BasicMath.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/BasicMath.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract BasicMath {\n    uint256 public constant MAX_UINT256 = type(uint256).max;\n\n    function add(uint256 a, uint256 b) external pure returns (uint256 sum, bool error) {\n        unchecked {\n            if (b > MAX_UINT256 - a) return (0, true);\n            return (a + b, false);\n        }\n    }\n\n    function sub(uint256 a, uint256 b) external pure returns (uint256 difference, bool error) {\n        unchecked {\n            if (b > a) return (0, true);\n            return (a - b, false);\n        }\n    }\n}"
+      }
+    }
+  }
+}

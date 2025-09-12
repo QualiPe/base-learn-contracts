@@ -21,8 +21,8 @@ describe("WeightedVoting", async function () {
     const c = await viem.deployContract("WeightedVoting", ["Weighted", "WV"]);
     const wallets = await viem.getWalletClients();
 
-    await c.write.claim([], { account: wallets[0].account });
-    await assert.rejects(c.write.claim([], { account: wallets[0].account }));
+    await c.write.claim({ account: wallets[0].account });
+    await assert.rejects(c.write.claim({ account: wallets[0].account }));
 
     const bal0 = (await c.read.balanceOf([wallets[0].account.address])) as bigint;
     assert.equal(Number(bal0), 100);
@@ -34,7 +34,7 @@ describe("WeightedVoting", async function () {
 
     await assert.rejects(c.write.createIssue(["Test", 1n], { account: wallets[0].account }));
 
-    await c.write.claim([], { account: wallets[0].account });
+    await c.write.claim({ account: wallets[0].account });
 
     await assert.rejects(c.write.createIssue(["Test", 101n], { account: wallets[0].account }));
 
@@ -51,21 +51,21 @@ describe("WeightedVoting", async function () {
     const c = await viem.deployContract("WeightedVoting", ["Weighted", "WV"]);
     const wallets = await viem.getWalletClients();
 
-    await c.write.claim([], { account: wallets[0].account });
-    await c.write.claim([], { account: wallets[1].account });
+    await c.write.claim({ account: wallets[0].account });
+    await c.write.claim({ account: wallets[1].account });
 
     await c.write.createIssue(["Q", 100n], { account: wallets[0].account });
 
-    await c.write.vote([1n, 1n], { account: wallets[0].account });
+    await c.write.vote([1n, 1], { account: wallets[0].account });
 
-    await assert.rejects(c.write.vote([1n, 1n], { account: wallets[0].account }));
+    await assert.rejects(c.write.vote([1n, 1], { account: wallets[0].account }));
 
     const iss0 = (await c.read.getIssue([1n])) as unknown as Issue;
     assert.equal(Number(iss0.totalVotes), 100);
     assert.equal(Number(iss0.votesFor), 100);
     assert.equal(iss0.closed, false);
 
-    await c.write.vote([1n, 0n], { account: wallets[1].account });
+    await c.write.vote([1n, 0], { account: wallets[1].account });
 
     const iss1 = (await c.read.getIssue([1n])) as unknown as Issue;
     assert.equal(Number(iss1.totalVotes), 200);

@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-e2d84189a937c87f8434ca66e4d294d3c0dcd9ec",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/ControlStructures.sol": "project/contracts/ControlStructures.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/ControlStructures.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract ControlStructures {\n    error AfterHours(uint256 time);\n    error AtLunch();\n\n    function fizzBuzz(uint256 _number) public pure returns (string memory response) {\n        if (_number % 3 == 0 && _number % 5 == 0) {\n            return \"FizzBuzz\";\n        } else if (_number % 3 == 0) {\n            return \"Fizz\";\n        } else if (_number % 5 == 0) {\n            return \"Buzz\";\n        } else {\n            return \"Splat\";\n        }\n    }\n\n    function doNotDisturb(uint256 _time) public pure returns (string memory result) {\n        assert(_time < 2400);\n\n        if (_time > 2200 || _time < 800) {\n            revert AfterHours(_time);\n        } else if (_time >= 1200 && _time <= 1299) {\n            revert AtLunch();\n        } else if (_time >= 800 && _time <= 1199) {\n            return \"Morning!\";\n        } else if (_time >= 1300 && _time <= 1799) {\n            return \"Afternoon!\";\n        } else if (_time >= 1800 && _time <= 2200) {\n            return \"Evening!\";\n        }\n    }\n}\n\n\n"
+      }
+    }
+  }
+}

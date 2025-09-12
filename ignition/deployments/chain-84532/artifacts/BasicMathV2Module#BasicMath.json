@@ -1,0 +1,156 @@
+{
+  "_format": "hh3-artifact-1",
+  "contractName": "BasicMath",
+  "sourceName": "contracts/BasicMath.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "MAX_INT",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_UINT256",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "add",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "sum",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "error",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "adder",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "sum",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "error",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "sub",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "difference",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "error",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "subtractor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "difference",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "error",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600e575f5ffd5b506101528061001c5f395ff3fe608060405234801561000f575f5ffd5b5060043610610060575f3560e01c806306b034e914610064578063098d32281461009157806333a581d2146100915780635270312a146100a7578063771602f714610064578063b67d77c5146100a7575b5f5ffd5b6100776100723660046100fc565b6100ba565b604080519283529015156020830152015b60405180910390f35b6100995f1981565b604051908152602001610088565b6100776100b53660046100fc565b6100de565b5f8083198311156100d057505f905060016100d7565b50508181015f5b9250929050565b5f5f838311156100f357505f905060016100d7565b50509003905f90565b5f5f6040838503121561010d575f5ffd5b5050803592602090910135915056fea26469706673582212205eb6b9ed88a3ee047cf8c9c046533678b658dbddc61577a1d0aa3afec871e4ea64736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561000f575f5ffd5b5060043610610060575f3560e01c806306b034e914610064578063098d32281461009157806333a581d2146100915780635270312a146100a7578063771602f714610064578063b67d77c5146100a7575b5f5ffd5b6100776100723660046100fc565b6100ba565b604080519283529015156020830152015b60405180910390f35b6100995f1981565b604051908152602001610088565b6100776100b53660046100fc565b6100de565b5f8083198311156100d057505f905060016100d7565b50508181015f5b9250929050565b5f5f838311156100f357505f905060016100d7565b50509003905f90565b5f5f6040838503121561010d575f5ffd5b5050803592602090910135915056fea26469706673582212205eb6b9ed88a3ee047cf8c9c046533678b658dbddc61577a1d0aa3afec871e4ea64736f6c634300081c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/BasicMath.sol",
+  "buildInfoId": "solc-0_8_28-22fa4de8a5f21d7d870722eaf585797640d7eeb4"
+}

@@ -1,0 +1,126 @@
+{
+  "_format": "hh3-artifact-1",
+  "contractName": "EngineeringManager",
+  "sourceName": "contracts/InheritanceSubmission.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_idNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_managerId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_annualSalary",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_reportId",
+          "type": "uint256"
+        }
+      ],
+      "name": "addReport",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "annualSalary",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "employeeIds",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAnnualCost",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "idNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "managerId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "resetReports",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600e575f5ffd5b50604051610231380380610231833981016040819052602b91603a565b5f929092556001556002556064565b5f5f5f60608486031215604b575f5ffd5b5050815160208301516040909301519094929350919050565b6101c0806100715f395ff3fe608060405234801561000f575f5ffd5b506004361061007a575f3560e01c80637e397536116100585780637e397536146100a957806386e73dc3146100bc578063a596d3c814610100578063f5895a0a14610108575f5ffd5b80633f83ea3b1461007e57806350dca6ab146100985780635cdee0c0146100a1575b5f5ffd5b6100865f5481565b60405190815260200160405180910390f35b61008660025481565b600254610086565b6100866100b7366004610173565b610111565b6100fe6100ca366004610173565b600380546001810182555f919091527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b0155565b005b6100fe610130565b61008660015481565b60038181548110610120575f80fd5b5f91825260209091200154905081565b61013b60035f61013d565b565b5080545f8255905f5260205f2090810190610158919061015b565b50565b5b8082111561016f575f815560010161015c565b5090565b5f60208284031215610183575f5ffd5b503591905056fea2646970667358221220a2625c5c2d5946d8942c69bc98110b75e3dcdfd3cc17225b7706bd81ce18a26c64736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561000f575f5ffd5b506004361061007a575f3560e01c80637e397536116100585780637e397536146100a957806386e73dc3146100bc578063a596d3c814610100578063f5895a0a14610108575f5ffd5b80633f83ea3b1461007e57806350dca6ab146100985780635cdee0c0146100a1575b5f5ffd5b6100865f5481565b60405190815260200160405180910390f35b61008660025481565b600254610086565b6100866100b7366004610173565b610111565b6100fe6100ca366004610173565b600380546001810182555f919091527fc2575a0e9e593c00f959f8c92f12db2869c3395a3b0502d05e2516446f71f85b0155565b005b6100fe610130565b61008660015481565b60038181548110610120575f80fd5b5f91825260209091200154905081565b61013b60035f61013d565b565b5080545f8255905f5260205f2090810190610158919061015b565b50565b5b8082111561016f575f815560010161015c565b5090565b5f60208284031215610183575f5ffd5b503591905056fea2646970667358221220a2625c5c2d5946d8942c69bc98110b75e3dcdfd3cc17225b7706bd81ce18a26c64736f6c634300081c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/InheritanceSubmission.sol",
+  "buildInfoId": "solc-0_8_28-faece575ccb0ee34329529dc8e3c53b94f3c6123"
+}

@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-6740bcaf7dbff13d026463c6ad09e98e84582ac9",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/FavoriteRecords.sol": "project/contracts/FavoriteRecords.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/FavoriteRecords.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract FavoriteRecords {\n    mapping(string => bool) private approvedRecords;\n    string[] private approvedRecordsIndex;\n\n    mapping(address => mapping(string => bool)) public userFavorites;\n    mapping(address => string[]) private userFavoritesIndex;\n\n    error NotApproved(string albumName);\n\n    constructor() {\n        approvedRecordsIndex = [\n            \"Thriller\",\n            \"Back in Black\",\n            \"The Bodyguard\",\n            \"The Dark Side of the Moon\",\n            \"Their Greatest Hits (1971-1975)\",\n            \"Hotel California\",\n            \"Come On Over\",\n            \"Rumours\",\n            \"Saturday Night Fever\"\n        ];\n        for (uint i = 0; i < approvedRecordsIndex.length; i++) {\n            approvedRecords[approvedRecordsIndex[i]] = true;\n        }\n    }\n\n    function getApprovedRecords() public view returns (string[] memory) {\n        return approvedRecordsIndex;\n    }\n\n    function addRecord(string memory _albumName) public {\n        if (!approvedRecords[_albumName]) {\n            revert NotApproved({albumName: _albumName});\n        }\n        if (!userFavorites[msg.sender][_albumName]) {\n            userFavorites[msg.sender][_albumName] = true;\n            userFavoritesIndex[msg.sender].push(_albumName);\n        }\n    }\n\n    function getUserFavorites(address _address) public view returns (string[] memory) {\n        return userFavoritesIndex[_address];\n    }\n\n    function resetUserFavorites() public {\n        for (uint i = 0; i < userFavoritesIndex[msg.sender].length; i++) {\n            delete userFavorites[msg.sender][userFavoritesIndex[msg.sender][i]];\n        }\n        delete userFavoritesIndex[msg.sender];\n    }\n}\n\n\n"
+      }
+    }
+  }
+}

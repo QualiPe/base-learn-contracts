@@ -1,0 +1,85 @@
+{
+  "_format": "hh3-artifact-1",
+  "contractName": "BasicMath",
+  "sourceName": "contracts/BasicMath.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "MAX_UINT256",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "add",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "sum",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "error",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "a",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "b",
+          "type": "uint256"
+        }
+      ],
+      "name": "sub",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "difference",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "error",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600e575f5ffd5b5061011d8061001c5f395ff3fe6080604052348015600e575f5ffd5b5060043610603a575f3560e01c806333a581d214603e578063771602f7146058578063b67d77c514607b575b5f5ffd5b60455f1981565b6040519081526020015b60405180910390f35b6067606336600460c8565b608a565b60408051928352901515602083015201604f565b6067608636600460c8565b60ac565b5f808319831115609e57505f9050600160a5565b50508181015f5b9250929050565b5f5f8383111560bf57505f9050600160a5565b50509003905f90565b5f5f6040838503121560d8575f5ffd5b5050803592602090910135915056fea2646970667358221220be32b9847d21b81bf231c1b24d90e856755eab85f73711dda29ebb0a501d359964736f6c634300081c0033",
+  "deployedBytecode": "0x6080604052348015600e575f5ffd5b5060043610603a575f3560e01c806333a581d214603e578063771602f7146058578063b67d77c514607b575b5f5ffd5b60455f1981565b6040519081526020015b60405180910390f35b6067606336600460c8565b608a565b60408051928352901515602083015201604f565b6067608636600460c8565b60ac565b5f808319831115609e57505f9050600160a5565b50508181015f5b9250929050565b5f5f8383111560bf57505f9050600160a5565b50509003905f90565b5f5f6040838503121560d8575f5ffd5b5050803592602090910135915056fea2646970667358221220be32b9847d21b81bf231c1b24d90e856755eab85f73711dda29ebb0a501d359964736f6c634300081c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/BasicMath.sol",
+  "buildInfoId": "solc-0_8_28-84ad9e563d46d5fb2f572078cef225e3fb252686"
+}

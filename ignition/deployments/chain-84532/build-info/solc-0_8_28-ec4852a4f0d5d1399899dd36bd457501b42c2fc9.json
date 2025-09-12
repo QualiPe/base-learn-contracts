@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-ec4852a4f0d5d1399899dd36bd457501b42c2fc9",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/EmployeeStorage.sol": "project/contracts/EmployeeStorage.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/EmployeeStorage.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract EmployeeStorage {\n    uint16 private shares;\n    uint32 private salary;\n    uint256 public idNumber;\n    string public name;\n\n    error TooManyShares(uint16 sharesTotal);\n\n    constructor(uint16 _shares, string memory _name, uint32 _salary, uint256 _idNumber) {\n        shares = _shares;\n        name = _name;\n        salary = _salary;\n        idNumber = _idNumber;\n    }\n\n    function viewShares() public view returns (uint16) {\n        return shares;\n    }\n\n    function viewSalary() public view returns (uint32) {\n        return salary;\n    }\n\n    function grantShares(uint16 _newShares) public {\n        if (_newShares > 5000) {\n            revert(\"Too many shares\");\n        } else if (shares + _newShares > 5000) {\n            revert TooManyShares(shares + _newShares);\n        }\n        shares += _newShares;\n    }\n\n    function checkForPacking(uint256 _slot) public view returns (uint256 r) {\n        assembly {\n            r := sload(_slot)\n        }\n    }\n\n    function debugResetShares() public {\n        shares = 1000;\n    }\n}\n\n\n"
+      }
+    }
+  }
+}

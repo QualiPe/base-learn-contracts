@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-faece575ccb0ee34329529dc8e3c53b94f3c6123",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/InheritanceSubmission.sol": "project/contracts/InheritanceSubmission.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/InheritanceSubmission.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\nabstract contract Employee {\n    uint256 public idNumber;\n    uint256 public managerId;\n\n    constructor(uint256 _idNumber, uint256 _managerId) {\n        idNumber = _idNumber;\n        managerId = _managerId;\n    }\n\n    function getAnnualCost() public virtual returns (uint256);\n}\n\ncontract Salaried is Employee {\n    uint256 public annualSalary;\n\n    constructor(uint256 _idNumber, uint256 _managerId, uint256 _annualSalary) Employee(_idNumber, _managerId) {\n        annualSalary = _annualSalary;\n    }\n\n    function getAnnualCost() public view override returns (uint256) {\n        return annualSalary;\n    }\n}\n\ncontract Hourly is Employee {\n    uint256 public hourlyRate;\n\n    constructor(uint256 _idNumber, uint256 _managerId, uint256 _hourlyRate) Employee(_idNumber, _managerId) {\n        hourlyRate = _hourlyRate;\n    }\n\n    function getAnnualCost() public view override returns (uint256) {\n        return hourlyRate * 2080;\n    }\n}\n\ncontract Manager {\n    uint256[] public employeeIds;\n\n    function addReport(uint256 _reportId) public {\n        employeeIds.push(_reportId);\n    }\n\n    function resetReports() public {\n        delete employeeIds;\n    }\n}\n\ncontract Salesperson is Hourly {\n    constructor(uint256 _idNumber, uint256 _managerId, uint256 _hourlyRate)\n        Hourly(_idNumber, _managerId, _hourlyRate)\n    {}\n}\n\ncontract EngineeringManager is Salaried, Manager {\n    constructor(uint256 _idNumber, uint256 _managerId, uint256 _annualSalary)\n        Salaried(_idNumber, _managerId, _annualSalary)\n    {}\n}\n\ncontract InheritanceSubmission {\n    address public salesPerson;\n    address public engineeringManager;\n\n    constructor(address _salesPerson, address _engineeringManager) {\n        salesPerson = _salesPerson;\n        engineeringManager = _engineeringManager;\n    }\n}\n\n\n"
+      }
+    }
+  }
+}

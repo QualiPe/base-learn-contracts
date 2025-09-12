@@ -1,0 +1,13 @@
+{
+  "BasicMathModule#BasicMath": "0xBB71b2698f872929bAc3677452D295F6261a26fC",
+  "BasicMathV2Module#BasicMath": "0x4B582381f0EC25cd793c625B928f2D9c01AA17f7",
+  "ControlStructuresModule#ControlStructures": "0x833c4904d374aB1689A0C2a5Ad3dbD1b3c0bBb9B",
+  "EmployeeStorageModule#EmployeeStorage": "0xd6A2a81BAA55e6d33dCCFC94ffbb76A2605d20bE",
+  "EmployeeStorageV2Module#EmployeeStorage": "0x5Ed76B134B2Ea8f27ADacd42a821c2e42c1f9f38",
+  "ArraysExerciseModule#ArraysExercise": "0xa2f59CC86f3fB0153EC1b601fD5a9Fc93A9f65Df",
+  "FavoriteRecordsModule#FavoriteRecords": "0x3Ec83A4166273D1520E7ED171188f5c9141cD18C",
+  "GarageManagerModule#GarageManager": "0xC6127d2f0613A27bd1342f6e5393490879ea7739",
+  "InheritanceSubmissionModule#EngineeringManager": "0x9675720A6367bE95438506cfa6bc1beeaFB5E9Da",
+  "InheritanceSubmissionModule#Salesperson": "0x5723B8B92B60ce30FeBE5A3502082b33e8E0AC8d",
+  "InheritanceSubmissionModule#InheritanceSubmission": "0x86DaEabfb8aF3cEad028309c5644151445Ef28a5"
+}
