@@ -9,7 +9,7 @@ library SillyStringUtils {
     }
 
     function shruggie(string memory self) internal pure returns (string memory) {
-        return string.concat(self, unicode" ¯\\_(ツ)_/¯");
+        return string.concat(self, unicode" 🤷");
     }
 }
 

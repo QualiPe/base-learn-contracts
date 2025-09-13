@@ -21,7 +21,7 @@ describe("ImportsExercise", async function () {
     await c.write.saveHaiku(["In the twilight rain", "these brilliant-hued hibiscus—", "A lovely sunset"]);
 
     const h = (await c.read.shruggieHaiku()) as { line1: string; line2: string; line3: string };
-    assert.equal(h.line3.endsWith(" ¯\\_(ツ)_/¯"), true);
+    assert.equal(h.line3.endsWith(" 🤷"), true);
   });
 });
 

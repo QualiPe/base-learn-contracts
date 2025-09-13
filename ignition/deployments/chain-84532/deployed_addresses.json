@@ -9,5 +9,14 @@
   "GarageManagerModule#GarageManager": "0xC6127d2f0613A27bd1342f6e5393490879ea7739",
   "InheritanceSubmissionModule#EngineeringManager": "0x9675720A6367bE95438506cfa6bc1beeaFB5E9Da",
   "InheritanceSubmissionModule#Salesperson": "0x5723B8B92B60ce30FeBE5A3502082b33e8E0AC8d",
-  "InheritanceSubmissionModule#InheritanceSubmission": "0x86DaEabfb8aF3cEad028309c5644151445Ef28a5"
+  "InheritanceSubmissionModule#InheritanceSubmission": "0x86DaEabfb8aF3cEad028309c5644151445Ef28a5",
+  "ErrorTriageExerciseModule#ErrorTriageExercise": "0x76a09407d28Be20D85E3b9f7a234dBeA5a410227",
+  "ImportsExerciseModule#ImportsExercise": "0xc9132017cf367E186ec3DFd7745C01302cCc8447",
+  "ImportsExerciseV2Module#ImportsExercise": "0xEBe9Cac8A3b5c017e9Cd89f000ef312Db8945eFd",
+  "ImportsExerciseV3Module#ImportsExercise": "0x2f02009ab0995C8990b70B070D646E5A57e0adEd",
+  "AddressBookFactoryModule#AddressBookFactory": "0xff78f5Df7F74A3957cb1B942eBD0EedB37731aAd",
+  "UnburnableTokenModule#UnburnableToken": "0x41aD7006bB3dcB0Eeefe9564cf59d74b82D6D587",
+  "UnburnableTokenV2Module#UnburnableToken": "0xB2b33567D0A97aEe9dce4f5e58bbb8ff0FdecA68",
+  "WeightedVotingModule#WeightedVoting": "0x7D07266172c3be40B9699CE9f90bfD25C3780a9f",
+  "HaikuNFTModule#HaikuNFT": "0xA2e70ced7aA23e982bC9b08846CbaE5045c306BB"
 }

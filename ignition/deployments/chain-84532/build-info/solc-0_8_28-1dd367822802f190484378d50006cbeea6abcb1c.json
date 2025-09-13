@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-1dd367822802f190484378d50006cbeea6abcb1c",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/UnburnableToken.sol": "project/contracts/UnburnableToken.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/UnburnableToken.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract UnburnableToken {\n    string private salt = \"516829\";\n\n    mapping(address => uint256) public balances;\n\n    uint256 public totalSupply;\n    uint256 public totalClaimed;\n    mapping(address => bool) private claimed;\n\n    error TokensClaimed();\n    error AllTokensClaimed();\n    error UnsafeTransfer(address _to);\n\n    constructor() {\n        totalSupply = 100000000;\n    }\n\n    function claim() public {\n        if (totalClaimed >= totalSupply) revert AllTokensClaimed();\n        if (claimed[msg.sender]) revert TokensClaimed();\n        balances[msg.sender] += 1000;\n        totalClaimed += 1000;\n        claimed[msg.sender] = true;\n    }\n\n    function safeTransfer(address _to, uint256 _amount) public {\n        if (_to == address(0) || _to.balance == 0) revert UnsafeTransfer(_to);\n        require(balances[msg.sender] >= _amount, \"Insufficient balance\");\n        balances[msg.sender] -= _amount;\n        balances[_to] += _amount;\n    }\n}\n\n\n"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-34e9ceba67e22739b118b10ff1cde71343fdd34c",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/ErrorTriageExercise.sol": "project/contracts/ErrorTriageExercise.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/ErrorTriageExercise.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract ErrorTriageExercise {\n    function diffWithNeighbor(\n        uint256 _a,\n        uint256 _b,\n        uint256 _c,\n        uint256 _d\n    ) public pure returns (uint256[] memory) {\n        uint256[] memory results = new uint256[](3);\n        results[0] = _a > _b ? _a - _b : _b - _a;\n        results[1] = _b > _c ? _b - _c : _c - _b;\n        results[2] = _c > _d ? _c - _d : _d - _c;\n        return results;\n    }\n\n    function applyModifier(uint256 _base, int256 _modifier) public pure returns (uint256 returnValue) {\n        if (_modifier > 0) {\n            return _base + uint256(_modifier);\n        }\n        return _base - uint256(-_modifier);\n    }\n\n    uint256[] private arr;\n\n    function popWithReturn() public returns (uint256 returnNum) {\n        if (arr.length == 0) return 0;\n        uint256 result = arr[arr.length - 1];\n        arr.pop();\n        return result;\n    }\n\n    function addToArr(uint256 _num) public {\n        arr.push(_num);\n    }\n\n    function getArr() public view returns (uint256[] memory) {\n        return arr;\n    }\n\n    function resetArr() public {\n        delete arr;\n    }\n}\n\n\n"
+      }
+    }
+  }
+}

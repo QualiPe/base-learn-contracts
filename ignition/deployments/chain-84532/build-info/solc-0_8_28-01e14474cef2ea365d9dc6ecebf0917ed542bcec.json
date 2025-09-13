@@ -1,0 +1,42 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-01e14474cef2ea365d9dc6ecebf0917ed542bcec",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/ImportsExercise.sol": "project/contracts/ImportsExercise.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/ImportsExercise.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity ^0.8.28;\n\nimport \"./libraries/SillyStringUtils.sol\";\n\ncontract ImportsExercise {\n    using SillyStringUtils for string;\n\n    SillyStringUtils.Haiku public haiku;\n\n    function saveHaiku(string memory _line1, string memory _line2, string memory _line3) public {\n        haiku.line1 = _line1;\n        haiku.line2 = _line2;\n        haiku.line3 = _line3;\n    }\n\n    function getHaiku() public view returns (SillyStringUtils.Haiku memory) {\n        return haiku;\n    }\n\n    function shruggieHaiku() public view returns (SillyStringUtils.Haiku memory) {\n        SillyStringUtils.Haiku memory newHaiku = haiku;\n        newHaiku.line3 = newHaiku.line3.shruggie();\n        return newHaiku;\n    }\n}\n\n\n"
+      },
+      "project/contracts/libraries/SillyStringUtils.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\nlibrary SillyStringUtils {\n    struct Haiku {\n        string line1;\n        string line2;\n        string line3;\n    }\n\n    function shruggie(string memory self) internal pure returns (string memory) {\n        return string.concat(self, unicode\" 🤷\");\n    }\n}\n\n\n"
+      }
+    }
+  }
+}
